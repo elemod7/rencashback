@@ -10,7 +10,6 @@
     <div class="container mt-5">
         <h1 class="text-center mb-4">Результаты расчета</h1>
 
-        <!-- Вклад (вся сумма) -->
         <div class="card p-4 shadow-sm">
             <h2>1) При внесении всей суммы на вклад без НСЖ:</h2>
             <ul class="list-group mb-3">
@@ -24,7 +23,6 @@
             <p><strong>Итоговая сумма:</strong> {{ final_deposit_only_balance|round(2) }} руб.</p>
         </div>
 
-        <!-- Вклад + НСЖ -->
         <div class="card p-4 shadow-sm mt-4">
             <h2>2) При разделении сумм на вклад и НСЖ:</h2>
             <ul class="list-group mb-3">
@@ -41,7 +39,6 @@
             <p><strong>Итоговая сумма:</strong> {{ final_combined_split_balance|round(2) }} руб.</p>
         </div>
 
-        <!-- Разница -->
         <div class="card p-4 shadow-sm mt-4">
             <h2>3) При разделении суммы на вклад и НСЖ доход будет больше на:</h2>
             <p><strong>{{ difference|round(2) }} руб.</strong></p>
