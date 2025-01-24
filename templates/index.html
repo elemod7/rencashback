@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовый планировщик</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Финансовый планировщик</h1>
+        
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        
+        <form method="post" class="p-4 bg-white shadow rounded">
+            <div class="mb-3">
+                <label for="annual_nsz_payment" class="form-label">Ежегодный взнос в НСЖ:</label>
+                <input type="number" class="form-control" id="annual_nsz_payment" name="annual_nsz_payment" placeholder="Введите сумму" required>
+            </div>
+            <div class="mb-3">
+                <label for="deposit_amount" class="form-label">Сумма на вкладе:</label>
+                <input type="number" class="form-control" id="deposit_amount" name="deposit_amount" placeholder="Введите сумму" required>
+            </div>
+            <div class="mb-3">
+                <label for="tax_rate" class="form-label">Ставка налога (%):</label>
+                <input type="number" class="form-control" id="tax_rate" name="tax_rate" placeholder="Введите ставку (13,15,18,20,22)" required>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="has_official_income" name="has_official_income">
+                <label for="has_official_income" class="form-check-label">Официально трудоустроен</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Рассчитать</button>
+        </form>
+    </div>
+</body>
+</html>
